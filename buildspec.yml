@@ -11,7 +11,7 @@ phases:
   build:
     commands:
       - cargo build --release
-  test:
+  post_build:
     commands:
       - cargo test --verbose
 
