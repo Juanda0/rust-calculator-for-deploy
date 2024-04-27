@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      rust: 1.53
+  pre_build:
+    commands:
+      # Instalar las dependencias necesarias
+      - rustup default 1.53
+  build:
+    commands:
+      # Compilar el proyecto
+      - cargo build --verbose
+  post_build:
+    commands:
+      # Ejecutar pruebas
+      - cargo test --verbose
