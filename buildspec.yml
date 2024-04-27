@@ -2,8 +2,9 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      rust: 1.53
+    commands:
+      - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      - source $HOME/.cargo/env
   pre_build:
     commands:
       # Instalar las dependencias necesarias
