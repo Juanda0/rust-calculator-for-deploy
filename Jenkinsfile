@@ -6,7 +6,7 @@ pipeline {
         sh 'cargo --version'
       }
     }
-    
+
     stage('Build') {
       steps {
         sh 'cargo build'
