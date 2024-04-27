@@ -15,6 +15,11 @@ phases:
     commands:
       - cargo test --verbose
 
+artifacts:
+  files:
+    - target/release/rust-calculator-for-deploy
+  discard-paths: "yes"
+
 cache:
   paths:
     - $HOME/.cargo/registry/**/*
