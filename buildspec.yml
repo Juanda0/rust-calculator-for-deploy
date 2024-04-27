@@ -1,18 +1,25 @@
-version: 0.2
+version: "0.2"
+
+env:
+  shell: bash
 
 phases:
   install:
-    runtime-versions:
-      rust: 1.53
-  pre_build:
     commands:
-      # Instalar las dependencias necesarias
-      - rustup default 1.53
+      - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+      - source $HOME/.cargo/env
   build:
     commands:
-      # Compilar el proyecto
-      - cargo build --verbose
+      - cargo build --release
   post_build:
     commands:
-      # Ejecutar pruebas
       - cargo test --verbose
+
+artifacts:
+  files:
+    - target/release/YOUR_BINARY
+  discard-paths: "yes"
+
+cache:
+  paths:
+    - $HOME/.cargo/registry/**/*
