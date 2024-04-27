@@ -11,6 +11,9 @@ phases:
   build:
     commands:
       - cargo build --release
+  test:
+    commands:
+      - cargo test --verbose
 
 artifacts:
   files:
