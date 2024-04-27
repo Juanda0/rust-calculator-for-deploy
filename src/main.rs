@@ -1,5 +1,5 @@
-mod calculadora;
-
+pub mod calculadora;
+mod tests;
 use actix_web::{web, App, HttpResponse, HttpServer, Responder};
 use calculadora::Calculadora;
 
